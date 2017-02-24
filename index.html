@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Employment changes since 2007</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="msi_chart.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="//code.highcharts.com/highcharts.js" type="text/javascript"></script>
+    <script src="//code.highcharts.com/modules/data.js" type="text/javascript"></script>
+    <script src="//code.highcharts.com/maps/modules/map.js" type="text/javascript"></script>
+    <script src="//code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="msi_charts.js" type="text/javascript"></script>
+  </head>
+  <body>
+  <div class = "container">
+    <header>
+      <h2>Employment changes by educational attainment since 2007</h2>
+    </header>
+    <ul class="nav nav-pills">
+      <li class="active"><a data-toggle="pill" href="#introd">National</a></li>
+      <li><a data-toggle="pill" href="#state_chgd">Where: States</a></li>
+      <li><a data-toggle="pill" href="#occ_chgd">Where: Occupations</a></li>
+      <li><a data-toggle="pill" href="#ind_chgd">Where: Industry</a></li>
+      <li><a data-toggle="pill" href="#explore_statesd">Explore: States</a></li>
+    </ul>
+    <div class = "tab-content">
+    <div id = "introd" class = "tab-pane fade in active">
+    <section class = "intro">
+        <h3>National</h3>
+        <div class="row">
+        <div id = "intro" class = "chart col-md-8"></div>
+        <div id = "intro-txt" class = "col-md-4">
+          <p>During the recession of 2007, the number of workers with some college or Associate's degrees
+          fell by almost two million but has regained all of its losses since then.</p>
+          <p><em>However, there have been even larger gains in the number
+          workers with Bachelor's degrees or higher.</em>
+          <span class="glyphicon glyphicon-info-sign" title="Click on the legend for Bachelor's and advanced degree to see the employment change"></span>
+          </p>
+          <p>Since the recession, the economy has shed workers without any college experience.
+          <span class="glyphicon glyphicon-info-sign" title="Click on the legend for high school or less to see the employment change"></span>
+          These losses have stabilized since 2010.
+        </div>
+        </div>
+      </section>
+    </div>
+    <div id = "state_chgd" class = "tab-pane fade">
+      <section class = "where">
+        <h3>Where: States</h3>
+        <div class="row">
+        <div id = "state_chg" class = "chart_chg col-md-5"></div>
+        <div class = "describe col-md-2">
+          <p>The bar chart shows employment changes by state.
+            The bar in red is the change for the United States.</p>
+          <p><em>Clicking on the bar will update the line chart for the state.</em></p>
+          <p><em>Click on the legend for the line chart to toggle any series on or off.</em></p>
+          <div class = "radio-group">
+            <p class="radio-group-p">Select to see employment changes for other education groups</p>
+            <div class="radio">
+             <label><input type="radio" name="optradiost" value="hs">High school or less</label>
+           </div>
+           <div class="radio">
+             <label><input type="radio" name="optradiost" value="sc" checked="checked">Some college or Associate's degree</label>
+           </div>
+           <div class="radio">
+             <label><input type="radio" name="optradiost" value="ba">Bachelor's or higher</label>
+           </div>
+          </div>
+        </div>
+        <div id = "state_trend" class = "chart col-md-5"></div>
+        </div>
+      </section>
+    </div>
+    <div id ="occ_chgd" class = "tab-pane fade">
+      <section class = "where">
+        <h3>Where: Occupations</h3>
+        <div class="row">
+        <div id = "occ_chg" class = "chart_chg col-md-5"></div>
+        <div class = "describe col-md-2">
+          <p>The bar chart shows employment changes by occupation.
+            The bar in red is the change for the United States.</p>
+          <p><em>Clicking on the bar will update the line chart for the occupation.</em></p>
+          <p><em>Click on the legend for the line chart to toggle any series on or off.</em></p>
+          <div class = "radio-group">
+            <p class="radio-group-p">Select to see employment changes for other education groups</p>
+            <div class="radio">
+             <label><input type="radio" name="optradioocc" value="hs">High school or less</label>
+           </div>
+           <div class="radio">
+             <label><input type="radio" name="optradioocc" value="sc" checked="checked">Some college or Associate's degree</label>
+           </div>
+           <div class="radio">
+             <label><input type="radio" name="optradioocc" value="ba">Bachelor's or higher</label>
+           </div>
+          </div>
+        </div>
+        <div id = "occ_trend" class = "chart col-md-5"></div>
+        </div>
+      </section>
+    </div>
+    <div id = "ind_chgd" class = "tab-pane fade">
+      <section class = "where">
+        <h3>Where: Industry</h3>
+        <div class="row">
+        <div id = "industry_chg" class = "chart_chg col-md-5"></div>
+        <div class = "describe col-md-2">
+          <p>The bar chart shows employment changes by industry.
+            The bar in red is the change for the United States.</p>
+          <p><em>Clicking on the bar will update the line chart for the industry.</em></p>
+          <p><em>Click on the legend for the line chart to toggle any series on or off.</em></p>
+          <div class = "radio-group">
+            <p class="radio-group-p">Select to see employment changes for other education groups</p>
+            <div class="radio">
+             <label><input type="radio" name="optradioind" value="hs">High school or less</label>
+           </div>
+           <div class="radio">
+             <label><input type="radio" name="optradioind" value="sc" checked="checked">Some college or Associate's degree</label>
+           </div>
+           <div class="radio">
+             <label><input type="radio" name="optradioind" value="ba">Bachelor's or higher</label>
+           </div>
+          </div>
+        </div>
+        <div id = "industry_trend" class = "chart col-md-5"></div>
+        </div>
+      </section>
+    </div>
+    <div id = "explore_statesd" class = "tab-pane fade">
+      <section id = "explore_states" class = "explore">
+        <h3>Explore: States</h3>
+        <div class="row">
+        <div class = "col-md-9" id = "map_state"></div>
+        <div class="va">
+        <div class = "radio-group-m col-md-3">
+          <p class="radio-group-p">Select to see employment changes for other education groups</p>
+          <div class="radio">
+           <label><input type="radio" name="optradiomap" value="hs">High school or less</label>
+         </div>
+         <div class="radio">
+           <label><input type="radio" name="optradiomap" value="sc" checked="checked">Some college or Associate's degree</label>
+         </div>
+         <div class="radio">
+           <label><input type="radio" name="optradiomap" value="ba">Bachelor's or higher</label>
+         </div>
+        </div>
+        </div>
+        </div>
+      </section>
+
+      <div class="modal fade" id = "mapModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+              <h4 class="modal-title" id = "modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+              <div class = "row">
+                <div class = "col-md-4" id = "modal-ed"></div>
+                <div class = "col-md-4" id = "modal-ind"></div>
+                <div class = "col-md-4" id = "modal-occ"></div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <p class="text-muted pull-left">Click on legend to toggle series on or off<p>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+    </div>
+    </div>
+    <footer class="footer">
+    <div class="text-muted">
+    Data source: U.S. Bureau of the Census, <em>Current Population Survey</em>, monthly micro-data. Tabulations of workers age 18 and over.
+    </div>
+    </footer>
+  </div>
+  </body>
+</html>
